@@ -1,9 +1,9 @@
 make:
 	gcc -c system_call.c 
-	gcc	-c context_switch.c 
+	gcc -c context_switch.c 
 
 runsc: 
-	gcc -o runsc context_switch.o
+	gcc -o runsc system_call.o
 	./runsc
 
 runcs:
@@ -11,4 +11,4 @@ runcs:
 	./runcs
 
 clean:
-	rm -f runsc	runcs context_switch.o system_call.o
+	rm -f runsc runcs context_switch.o system_call.o
